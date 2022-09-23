@@ -64,4 +64,9 @@ function gameOver(gameWon) {
 	}
 }
 
+// best place for the api to play in 
+function bestplace(){
+    //returns a function that ensures that AI will play in the first empty squares  
+    return emptyboxes()[0];
+}
 
