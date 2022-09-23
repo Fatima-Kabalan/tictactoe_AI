@@ -26,7 +26,13 @@ function startGame() {
 }
 
 function turnClick(square) {
-	turn(square.target.id, huPlayer)
+    // if the player enters a number 
+    if(typeof origBoard[square.target.id] == 'number'){
+        turn(square.target.id, huPlayer)
+        // now it's the computer's turn (AI) to play where it's not a  tie 
+        if(!checkTie()) turn(bestplace(), aiPlayer);
+    }
+	
 }
 
 function turn(squareId, player) {
